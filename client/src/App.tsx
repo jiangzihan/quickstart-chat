@@ -66,8 +66,8 @@ function App() {
 
     setConn(
       DbConnection.builder()
-        .withUri('ws://localhost:3000')      // 服务器地址
-        .withModuleName('quickstart-chat')   // 当前消费
+        .withUri('wss://maincloud.spacetimedb.com')      // 服务器地址
+        .withModuleName('c200688658c31810fe91e6ae229ddb1c14c4056fcb06a0269faa439a3389e87b')   // 当前消费
         .withToken(localStorage.getItem('auth_token') || '')
         .onConnect(onConnect)
         .onDisconnect(onDisconnect)

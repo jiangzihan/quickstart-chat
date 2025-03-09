@@ -5,8 +5,8 @@ use spacetimedb_sdk::{credentials, DbContext, Error, Event, Identity, Status, Ta
 
 
 /// The URI of the SpacetimeDB instance hosting our chat module.
-const HOST: &str = "http://localhost:3000";
-const DB_NAME: &str = "quickstart-chat";
+const HOST: &str = "wss://maincloud.spacetimedb.com";
+const DB_NAME: &str = "c200688658c31810fe91e6ae229ddb1c14c4056fcb06a0269faa439a3389e87b";
 
 /// Load credentials from a file and connect to the database.
 fn connect_to_db() -> DbConnection {
@@ -31,7 +31,7 @@ fn connect_to_db() -> DbConnection {
 }
 
 fn creds_store() -> credentials::File {
-    credentials::File::new("quickstart-chat")
+    credentials::File::new(DB_NAME)
 }
 
 /// Our `on_connect` callback: save our credentials to a file.
